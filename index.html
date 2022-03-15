@@ -7,19 +7,21 @@
 </head>
 <body>
 
-<canvas id="myCanvas" width="1200" height="550"></canvas>
+<canvas id="myCanvas" width="1200" height="580"></canvas>
 
 <script>
+    var resolucionx = 2
+    var dpi = 96 * resolucionx
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     var ballRadius = 10;
     var x = canvas.width/2;
     var y = canvas.height-30;
-    var dx = 2;
+    var dx = 2; // Velocidad inicial x
     var dy = -2;
     var paddleHeight = 10;
     var paddleWidth = 75;
-    var paddleX = (canvas.width-paddleWidth)/2;
+    var paddleX = ((canvas.width - paddleWidth)) * resolucionx;
     var rightPressed = false;
     var leftPressed = false;
     var brickRowCount = 13;
@@ -69,8 +71,8 @@
     }
     function mouseMoveHandler(e) {
         var relativeX = e.clientX - canvas.offsetLeft;
-        if(relativeX > 0 && relativeX < canvas.width) {
-            paddleX = relativeX - paddleWidth/2;
+        if (relativeX > 0 && relativeX < canvas.width) {
+            paddleX = (relativeX - paddleWidth / (2*resolucionx)) ;
         }
     }
     function collisionDetection() {
@@ -101,7 +103,7 @@
     }
     function drawPaddle() {
         ctx.beginPath();
-        ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+        ctx.rect(paddleX, (canvas.height / resolucionx) - paddleHeight, paddleWidth, paddleHeight);
         ctx.fillStyle = "#0095DD";
         ctx.fill();
         ctx.closePath();
@@ -131,7 +133,7 @@
     function drawLives() {
         ctx.font = "16px Arial";
         ctx.fillStyle = "#0095DD";
-        ctx.fillText("Lives: "+lives, canvas.width-65, 20);
+        ctx.fillText("Lives: " + lives, (canvas.width / resolucionx)-55, 20);
     }
 
     function draw() {
@@ -143,13 +145,13 @@
         drawLives();
         collisionDetection();
 
-        if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+        if (x * resolucionx + dx > (canvas.width - ballRadius) || x + dx < ballRadius) {
             dx = -dx;
         }
         if(y + dy < ballRadius) {
             dy = -dy;
         }
-        else if(y + dy > canvas.height-ballRadius) {
+        else if (y * resolucionx + dy > canvas.height - ballRadius) {
             if(x > paddleX && x < paddleX + paddleWidth) {
                 dy = -dy;
             }
@@ -159,12 +161,13 @@
                     alert("GAME OVER");
                     document.location.reload();
                 }
+                
                 else {
-                    x = canvas.width/2;
-                    y = canvas.height-30;
+                    x = (canvas.width / 2) / resolucionx;
+                    y = (canvas.height - 30) / resolucionx;
                     dx = 2;
                     dy = -2;
-                    paddleX = (canvas.width-paddleWidth)/2;
+                    paddleX = ((canvas.width - paddleWidth) / 2) * resolucionx;
                 }
             }
         }
@@ -184,10 +187,32 @@
 	}
     }
 
+    
+    // Set up CSS size.
+    canvas.style.width = canvas.style.width || canvas.width + 'px';
+    canvas.style.height = canvas.style.height || canvas.height + 'px';
+
+    // Get size information.
+    var scaleFactor = dpi / 96;
+    var width = parseFloat(canvas.style.width);
+    var height = parseFloat(canvas.style.height);
+
+    // Backup the canvas contents.
+    var oldScale = canvas.width / width;
+    var backupScale = scaleFactor / oldScale;
+    var backup = canvas.cloneNode(false);
+    backup.getContext('2d').drawImage(canvas, 0, 0);
+
+    // Resize the canvas.
+    var ctx = canvas.getContext('2d');
+    canvas.width = Math.ceil(width * scaleFactor);
+    canvas.height = Math.ceil(height * scaleFactor);
+
+    //Redraw the canvas image and scale future draws.
+    ctx.setTransform(scaleFactor, 0, 0, scaleFactor, 0, 0);
+
     draw();
 </script>
 
 </body>
 </html>
-
-
