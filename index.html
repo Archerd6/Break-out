@@ -7,21 +7,21 @@
 </head>
 <body>
 
-<canvas id="myCanvas" width="1200" height="580"></canvas>
+<canvas id="myCanvas" width="1250" height="580"></canvas>
 
 <script>
-    var resolucionx = 2
+    var resolucionx = 2   // Multiplicador de calidad
     var dpi = 96 * resolucionx
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     var ballRadius = 10;
     var x = canvas.width/2;
     var y = canvas.height-30;
-    var dx = 2; // Velocidad inicial x
+    var dx = 2; // Velocidad inicial x (de la pelota)
     var dy = -2;
     var paddleHeight = 10;
     var paddleWidth = 75;
-    var paddleX = ((canvas.width - paddleWidth)) * resolucionx;
+    var paddleX = (((canvas.width - paddleWidth))) / 2; // Posición inicial en eje X
     var rightPressed = false;
     var leftPressed = false;
     var brickRowCount = 13;
@@ -72,7 +72,7 @@
     function mouseMoveHandler(e) {
         var relativeX = e.clientX - canvas.offsetLeft;
         if (relativeX > 0 && relativeX < canvas.width) {
-            paddleX = (relativeX - paddleWidth / (2*resolucionx)) ;
+            paddleX = (relativeX - paddleWidth / (2));
         }
     }
     function collisionDetection() {
