@@ -10,9 +10,9 @@ Mueve el cursor para que la barra inferior se desplaze horizontalmente
 </p>
 
 <details>
-<summary><strong>S E T U P</strong></summary>
+<summary><strong>Características especiales</strong></summary>
 
-   Características especiales
+   
       Para el juego con `espacio`
 
 </details>
