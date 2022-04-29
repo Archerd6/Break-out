@@ -13,3 +13,5 @@ Mueve el cursor para que la barra inferior se desplaze horizontalmente
 <summary><strong>Características especiales</strong></summary>
 Pausa el juego con <ul>`Espacio`</ul>
 </details>
+
+- Suma (+)                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2+3 &nbsp; `=`
