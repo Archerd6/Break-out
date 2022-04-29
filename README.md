@@ -11,5 +11,5 @@ Mueve el cursor para que la barra inferior se desplaze horizontalmente
 
 <details>
 <summary><strong>Características especiales</strong></summary>
-Pausa el juego con `~/.fonts`  or 
+Pausa el juego con <ul><li>[x] item1</li><li>[ ] item2</li></ul>
 </details>
