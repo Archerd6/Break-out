@@ -13,7 +13,21 @@ Mueve el cursor para que la barra inferior se desplaze horizontalmente
 	<summary><strong>Características especiales</strong></summary>
 	Pausa el juego con `Espacio`
 	
-	- Suma (+)                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2+3 &nbsp; `=`
+	 3. Install needed fonts
+
+      You will need to install a few fonts (mainly icon fonts) in order for text and icons to be rendered properly.
+
+      Necessary fonts:
+      + **Iosevka**  - [here](https://github.com/ryanoasis/nerd-fonts/)
+      + **Icomoon**  - [here](https://www.dropbox.com/s/hrkub2yo9iapljz/icomoon.zip?dl=0)
+      + **Material Design** - [here](https://github.com/Templarian/MaterialDesign-Font)
+
+      Once you download them and unpack them, place them into `~/.fonts` or `~/.local/share/fonts`
+      and run this command for your system to detect the newly installed fonts.
+
+      ```sh
+      fc-cache -v
+      ```
 </details>
 
 - Suma (+)                          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 2+3 &nbsp; `=`
