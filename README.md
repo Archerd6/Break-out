@@ -13,7 +13,7 @@ Mueve el cursor para que la barra inferior se desplaze horizontalmente
 <summary><strong>Características especiales</strong></summary>
 <br>
 
-   Para el juego con
+   + Para el juego con
       `espacio`
 
 </details>
