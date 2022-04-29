@@ -14,7 +14,7 @@ Mueve el cursor para que la barra inferior se desplaze horizontalmente
 <br>
 
    + Para el juego con
-      `espacio`
+      `Espacio`
 
 </details>
 
