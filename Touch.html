@@ -16,29 +16,6 @@
             margin: 0 auto;
         }
 
-        .button {
-            width: 25%;
-            height: 200px;
-            font-size: 48px;
-            text-align: center;
-            cursor: pointer;
-            outline: none;
-            color: #fff;
-            background-color: #04AA6D;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-        }
-
-            .button:hover {
-                background-color: #3e8e41
-            }
-
-            .button:active {
-                background-color: #3e8e41;
-                box-shadow: 0 5px #666;
-                transform: translateY(4px);
-            }
     </style>
     <script src="phaser.min.js"></script>
 </head>
@@ -243,30 +220,7 @@
         ctx.setTransform(scaleFactor, 0, 0, scaleFactor, 0, 0);
 
         draw();
-
-        function PresionadoBotonDerecho() {
-            rightPressed = true;
-        }
-        function DesPresionadoBotonDerecho() {
-            rightPressed = false;
-        }
-        function PresionadoBotonIzquierdo() {
-            leftPressed = true;
-        }
-        function DesPresionadoBotonIzquierdo() {
-            leftPressed = false;
-        }
-
-        /*// MOUSE
-        document.addEventListener("mousemove", mouseMoveHandler);
-        function mouseMoveHandler(e) {
-            var relativeX = e.clientX - canvas.offsetLeft;
-            if (relativeX > 0 && relativeX < canvas.width) {
-                paddleX = (relativeX - paddleWidth / (2));
-            }
-        }
-        */
-        // TOUCH
+        
         document.addEventListener("touchstart", touchHandler);
         document.addEventListener("touchmove", touchHandler);
         function touchHandler(e) {
@@ -278,30 +232,6 @@
 
 
     </script>
-
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-
-    <center>
-        <button id="boton1" class="button" onmousedown="PresionadoBotonIzquierdo();" onmouseup="DesPresionadoBotonIzquierdo();">Left</button>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        <button id="boton2" class="button" onmousedown="PresionadoBotonDerecho();" onmouseup="DesPresionadoBotonDerecho();">Right</button>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <button id="boton3" class="button">test</button>
-    </center>
 
     <br />
     <br />
