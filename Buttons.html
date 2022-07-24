@@ -36,7 +36,7 @@
 </head>
 <body>
 
-    <canvas id="myCanvas" width="1250" height="580"></canvas>
+    <canvas id="myCanvas" width="1050" height="580"></canvas>
 
     <script>
         var resolucionx = 2   // Multiplicador de calidad
@@ -195,7 +195,7 @@
                 }
             }
 
-            if (rightPressed && paddleX < (canvas.width - paddleWidth) / resolucionx) {
+            if (rightPressed && paddleX < (canvas.width - (paddleWidth) * resolucionx) / resolucionx) {
                 paddleX += 7;
             }
             else if (leftPressed && paddleX > 0) {

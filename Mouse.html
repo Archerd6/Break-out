@@ -176,7 +176,7 @@
                 }
             }
 
-            if (rightPressed && paddleX < (canvas.width - paddleWidth) / resolucionx) {
+            if (rightPressed && paddleX < (canvas.width - (paddleWidth) * resolucionx) / resolucionx) {
                 paddleX += 7;
             }
             else if (leftPressed && paddleX > 0) {
