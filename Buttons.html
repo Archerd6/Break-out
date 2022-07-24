@@ -195,7 +195,7 @@
                 }
             }
 
-            if (rightPressed && paddleX < canvas.width - paddleWidth) {
+            if (rightPressed && paddleX < (canvas.width - paddleWidth) / resolucionx) {
                 paddleX += 7;
             }
             else if (leftPressed && paddleX > 0) {
@@ -264,28 +264,20 @@
         <button id="boton1" class="button" onmouseover="PresionadoBotonIzquierdo();" onmouseout="DesPresionadoBotonIzquierdo()" onmousedown="PresionadoBotonIzquierdo();" onmouseup="DesPresionadoBotonIzquierdo();">Left</button>
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
         <button id="boton2" class="button" onmouseover="PresionadoBotonDerecho();" onmouseout="DesPresionadoBotonDerecho()" onmousedown="PresionadoBotonDerecho();" onmouseup="DesPresionadoBotonDerecho();">Right</button>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <button id="boton3" class="button">test</button>
     </center>
 
     <br />
     <br />
     <br />
-
-    <script>
-        // button element
-        var button1 = document.querySelector("boton1");
-        var button2 = document.querySelector("boton2");
-
-        // touchstart handler
-        button1.addEventListener("touchStart", onlyTouch, false);
-        button2.addEventListener("touchStart", onlyTouch, false);
-
-        function onlyTouch(ev) {
-            // Call preventDefault() to prevent any further handling
-            console.log("Here a touchstart event is triggered");
-            PresionadoBotonDerecho();
-            ev.preventDefault();
-        }
-    </script>
 
 </body>
 </html>
