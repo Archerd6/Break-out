@@ -257,7 +257,7 @@
             leftPressed = false;
         }
 
-        // MOUSE
+        /*// MOUSE
         document.addEventListener("mousemove", mouseMoveHandler);
         function mouseMoveHandler(e) {
             var relativeX = e.clientX - canvas.offsetLeft;
@@ -265,15 +265,14 @@
                 paddleX = (relativeX - paddleWidth / (2));
             }
         }
-
+        */
         // TOUCH
         document.addEventListener("touchstart", touchHandler);
         document.addEventListener("touchmove", touchHandler);
         function touchHandler(e) {
             if (e.touches) {
-                paddleX = e.touches[0].pageX - paddleWidth / (2);
+                paddleX = e.touches[0].pageX;
                 e.preventDefault();
-                }
             }
         }
 
