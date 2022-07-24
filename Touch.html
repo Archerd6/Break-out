@@ -4,9 +4,17 @@
     <meta charset="utf-8" />
     <title>Break_out</title>
     <style>
-        * {padding: 0; margin: 0; background: #000;}
-        
-        canvas {background: #000; display: block; margin: 0 auto;}
+        * {
+            padding: 0;
+            margin: 0;
+            background: #000;
+        }
+
+        canvas {
+            background: #000;
+            display: block;
+            margin: 0 auto;
+        }
 
         .button {
             width: 25%;
@@ -31,8 +39,8 @@
                 box-shadow: 0 5px #666;
                 transform: translateY(4px);
             }
-
     </style>
+    <script src="phaser.min.js"></script>
 </head>
 <body>
 
@@ -248,6 +256,27 @@
         function DesPresionadoBotonIzquierdo() {
             leftPressed = false;
         }
+
+        // MOUSE
+        document.addEventListener("mousemove", mouseMoveHandler);
+        function mouseMoveHandler(e) {
+            var relativeX = e.clientX - canvas.offsetLeft;
+            if (relativeX > 0 && relativeX < canvas.width) {
+                paddleX = (relativeX - paddleWidth / (2));
+            }
+        }
+
+        // TOUCH
+        document.addEventListener("touchstart", touchHandler);
+        document.addEventListener("touchmove", touchHandler);
+        function touchHandler(e) {
+            if (e.touches) {
+                paddleX = e.touches[0].pageX - paddleWidth / (2);
+                e.preventDefault();
+                }
+            }
+        }
+
 
     </script>
 
