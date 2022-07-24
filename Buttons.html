@@ -9,8 +9,9 @@
         canvas {background: #000; display: block; margin: 0 auto;}
 
         .button {
-            padding: 45px 75px;
-            font-size: 24px;
+            width: 25%;
+            height: 200px;
+            font-size: 48px;
             text-align: center;
             cursor: pointer;
             outline: none;
@@ -254,20 +255,37 @@
     <br />
     <br />
     <br />
+    <br />
+    <br />
+    <br />
+    <br />
 
     <center>
-        <button class="button" onmouseover="PresionadoBotonIzquierdo();" onmouseout="DesPresionadoBotonIzquierdo()"  onmousedown="PresionadoBotonIzquierdo();" onmouseup="DesPresionadoBotonIzquierdo();">Left</button>
+        <button id="boton1" class="button" onmouseover="PresionadoBotonIzquierdo();" onmouseout="DesPresionadoBotonIzquierdo()" onmousedown="PresionadoBotonIzquierdo();" onmouseup="DesPresionadoBotonIzquierdo();">Left</button>
         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        <button class="button" onmouseover="PresionadoBotonDerecho();" onmouseout="DesPresionadoBotonDerecho()" onmousedown="PresionadoBotonDerecho();" onmouseup="DesPresionadoBotonDerecho();">Right</button>
+        <button id="boton2" class="button" onmouseover="PresionadoBotonDerecho();" onmouseout="DesPresionadoBotonDerecho()" onmousedown="PresionadoBotonDerecho();" onmouseup="DesPresionadoBotonDerecho();">Right</button>
     </center>
 
     <br />
     <br />
     <br />
 
+    <script>
+        // button element
+        var button1 = document.querySelector("boton1");
+        var button2 = document.querySelector("boton2");
 
+        // touchstart handler
+        button1.addEventListener("touchStart", onlyTouch, false);
+        button2.addEventListener("touchStart", onlyTouch, false);
 
-
+        function onlyTouch(ev) {
+            // Call preventDefault() to prevent any further handling
+            console.log("Here a touchstart event is triggered");
+            leftPressed = true;
+            ev.preventDefault();
+        }
+    </script>
 
 </body>
 </html>
