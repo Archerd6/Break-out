@@ -1,7 +1,7 @@
 # Break-out
 Juego de romper bloques
 
-Mueve el cursor para que la barra inferior se desplaze horizontalmente
+Mueve el cursor 🖱️ para que la barra inferior se desplace horizontalmente o presiona y desplaza en dispositivos móviles 📱
 
 
 
@@ -15,6 +15,8 @@ Mueve el cursor para que la barra inferior se desplaze horizontalmente
 
    + Para el juego con
       `Espacio`
+
+   + Juega desde dispositivos móviles y PC
 
 </details>
 
