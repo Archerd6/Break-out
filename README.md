@@ -16,7 +16,7 @@ Mueve el cursor 🖱️ para que la barra inferior se desplace horizontalmente o
    + Para el juego con
       `Espacio`
 
-   + Juega desde dispositivos móviles y PC
+   + Juega con dispositivos móviles y PC
 
 </details>
 
