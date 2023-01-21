@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>Break_out</title>
     <style>
-        * {padding: 0; margin: 0; background: #000;}
-        
-        canvas {background: #000; display: block; margin: 0 auto;}
+        * {
+            padding: 0;
+            margin: 0;
+            background: #000;
+        }
+
+        canvas {
+            background: #000;
+            display: block;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
     </style>
 </head>
+
 <body>
 
     <canvas id="myCanvas" width="1250" height="580"></canvas>
 
     <script>
+        // Velocidad inicial de la pelota
+        var dx = 2;
+        var dy = -5;
+        // Aleatoriedad de la dirección de la pelota en el eje X (entre 1 y -1)
+        dx = 4 * Math.random() * (1 - (-1)) + (-1);
+
         var resolucionx = 2   // Multiplicador de calidad
         var dpi = 96 * resolucionx
         var canvas = document.getElementById("myCanvas");
@@ -21,8 +41,6 @@
         var ballRadius = 10;
         var x = canvas.width / 2;
         var y = canvas.height - 30;
-        var dx = 2; // Velocidad inicial x (de la pelota)
-        var dy = -2;
         var paddleHeight = 10;
         var paddleWidth = 75;
         var paddleX = (((canvas.width - paddleWidth))) / 2; // Posición inicial en eje X
@@ -157,7 +175,15 @@
             }
             else if (y * resolucionx + dy > canvas.height - ballRadius) {
                 if (x > paddleX && x < paddleX + paddleWidth) {
-                    dy = -dy;
+
+                    // Aleatorizar la velocidad de la pelota (entre 3 y 6)
+                    dy = -(Math.random() * (6 - 3) + 3);
+
+                    // Probabilidad de 1 entre 8 de que la dirección de la pelota cambie
+                    if (Math.random() * (8 - 1) + 1 < 2) {
+                        dx = 4 * Math.random() * (1 - (-1)) + (-1);
+                    }
+                    
                 }
                 else {
                     lives--;
@@ -223,4 +249,5 @@
     <br />
 
 </body>
+
 </html>
